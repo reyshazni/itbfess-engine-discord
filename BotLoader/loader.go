@@ -15,8 +15,8 @@ func Loader() {
 		log.Fatal("Problem loading discord bot")
 		return
 	}
-	if dg.Open() != nil {
-		log.Fatal("Cannot Open DC Bot!")
+	if err = dg.Open(); err != nil {
+		log.Fatal(err)
 		return
 	}
 	Handler.HandlerRouter(dg)
