@@ -11,7 +11,6 @@ import (
 func RegistrationHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	botclient, err := s.User("@me")
 	if m.Author.Bot {
-		println(m.Author.Bot, "is true pren")
 		return
 	}
 	if len(m.GuildID) > 0 {
