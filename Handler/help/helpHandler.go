@@ -1,6 +1,7 @@
 package help
 
 import (
+	"fmt"
 	"github.com/bwmarrin/discordgo"
 	"log"
 )
@@ -18,9 +19,13 @@ func HelpHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 }
 
 func NewMemberHandler(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
-	println("kesini juga ternyata..")
+	channel, err := s.UserChannelCreate(m.User.ID)
+	if err != nil {
+		fmt.Println("Error creating private channel: ", err)
+		return
+	}
 	msg := generateMsg()
-	_, _ = s.ChannelMessageSend(m.User.ID, msg)
+	_, _ = s.ChannelMessageSend(channel.ID, msg)
 }
 
 func generateMsg() string {

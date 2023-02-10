@@ -10,7 +10,6 @@ import (
 
 func FessHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if m.Author.Bot {
-		println(m.Author.Bot, "is true pren")
 		return
 	}
 	botclient, err := s.User("@me")
