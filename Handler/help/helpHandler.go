@@ -24,7 +24,7 @@ func NewMemberHandler(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 }
 
 func generateMsg() string {
-	msg := `**This bot will be terminated on 1st march 2023**
+	msg := `**This bot will be terminated after 1st march 2023**
 >>> **Help**
 Greetings! We are excited to introduce ITBot/ITCord/ITBFess Discord. A Twitter ITBFess Alternative.
 
@@ -48,7 +48,7 @@ Whether you're new to our platform or simply need a refresher, the /help command
 
 
 p.s
-We are not planning to take over Mio-chan's ITBFess, after 1st march 2023, we will disable all services and delete all data
+We are not planning to take over Mio-chan's ITBFess. After 1st march 2023, all data will be deleted and all service will get terminated.
 `
 	return msg
 }
