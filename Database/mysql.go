@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
+	"os"
 )
 
 type DatabaseConfig struct {
@@ -26,18 +27,9 @@ func (conf DatabaseConfig) getDsn() string {
 var database *gorm.DB
 
 func loadDatabase() {
-	dbConf := DatabaseConfig{
-		Username: "root",
-		Password: "zxcvbnm0",
-		Database: "menfess",
-		Url:      "localhost",
-		Port:     3307,
-	}
-	dbConf.getDsn()
-
 	db, err := gorm.Open(mysql.New(
 		mysql.Config{
-			DSN: dbConf.getDsn(),
+			DSN: os.Getenv("DB_DSN"),
 		}),
 		&gorm.Config{
 			Logger: logger.Default.LogMode(logger.Info),

@@ -4,9 +4,10 @@ import (
 	"ITBFess/Database"
 	"ITBFess/Model/Entity"
 	"fmt"
-	"github.com/bwmarrin/discordgo"
 	"log"
 	"strings"
+
+	"github.com/bwmarrin/discordgo"
 )
 
 func FessHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
