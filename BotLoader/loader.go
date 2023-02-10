@@ -15,10 +15,13 @@ func Loader() {
 		log.Fatal("Problem loading discord bot")
 		return
 	}
+	dg.Identify.Intents |= discordgo.IntentGuildMembers
+	dg.Identify.Intents |= discordgo.IntentsGuildMessages
+	Handler.HandlerRouter(dg)
+	Task.MenfessSender(dg)
+
 	if err = dg.Open(); err != nil {
 		log.Fatal(err)
 		return
 	}
-	Handler.HandlerRouter(dg)
-	Task.MenfessSender(dg)
 }
