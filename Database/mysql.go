@@ -40,6 +40,7 @@ func loadDatabase() {
 	}
 	db.AutoMigrate(Entity.User{})
 	db.AutoMigrate(Entity.Menfess{})
+	db.AutoMigrate(Entity.Match{})
 	database = db
 
 	println("LOAD TEST DB")
