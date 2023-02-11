@@ -11,4 +11,5 @@ type User struct {
 	IsVerified  bool
 	DidSentFess bool
 	IsAdmin     bool
+	IsInMatch   bool
 }
